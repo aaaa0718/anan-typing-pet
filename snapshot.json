@@ -1,0 +1,12 @@
+{
+  "app_version": "2.0.0",
+  "snapshot_date": "2026-11-26",
+  "architecture": "arm64",
+  "minimum_macos": "13.0",
+  "files": {
+    "Contents/Info.plist": "923124843273690f098586521815e4c629ad1e34387922d542f8506ebfda7d94",
+    "Contents/MacOS/TypingGirl": "a002a9aeb6d46067e6772ab9756eaa58e47afd4d670b229d7d4e4321ea037f09",
+    "Contents/Resources/pet.html": "5e8a86120add7d57e215415ea861d1b59e2b97ab9defdf8151bac34fe8929ed3",
+    "Contents/_CodeSignature/CodeResources": "92d9e7d88f4225bfd56d261ce2288ad20c2b698f385132e12da0bb089ec87d30"
+  }
+}
