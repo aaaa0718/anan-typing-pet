@@ -3,7 +3,7 @@ import subprocess
 import shutil
 
 source = Path(__file__).resolve().parent
-app = source.parent / 'dist' / '安安打字操作.app'
+app = source.parent / 'dist' / 'AA TYPING.app'
 resources = app / 'Contents/Resources'
 binary = app / 'Contents/MacOS/TypingGirl'
 resources.mkdir(parents=True, exist_ok=True)

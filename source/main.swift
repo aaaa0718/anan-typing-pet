@@ -53,7 +53,7 @@ final class PetApp: NSObject, NSApplicationDelegate, WKNavigationDelegate {
             if NSScreen.screens.contains(where: { $0.visibleFrame.contains(NSPoint(x:saved.x+w/2,y:saved.y+h/2)) }) { origin=saved }
         }
         panel = PetPanel(contentRect:NSRect(origin:origin,size:NSSize(width:w,height:h)),styleMask:[.borderless,.nonactivatingPanel],backing:.buffered,defer:false)
-        panel.title="安安打字操作"
+        panel.title="AA TYPING"
         panel.isOpaque=false;panel.backgroundColor = .clear;panel.hasShadow=false
         panel.level = .floating;panel.hidesOnDeactivate=false;panel.isReleasedWhenClosed=false
         panel.collectionBehavior=[.canJoinAllSpaces,.fullScreenAuxiliary]
@@ -66,8 +66,8 @@ final class PetApp: NSObject, NSApplicationDelegate, WKNavigationDelegate {
         if let url=Bundle.main.url(forResource:"pet",withExtension:"html") { web.loadFileURL(url,allowingReadAccessTo:url.deletingLastPathComponent()) }
         panel.orderFrontRegardless()
         item=NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
-        item.button?.image=NSImage(systemSymbolName:"keyboard",accessibilityDescription:"安安打字操作")
-        item.button?.toolTip="安安打字操作 · 右键调整，双击演示"
+        item.button?.image=NSImage(systemSymbolName:"keyboard",accessibilityDescription:"AA TYPING")
+        item.button?.toolTip="AA TYPING · 右键调整，双击演示"
         refreshMenu();startListener()
         timer=Timer(timeInterval:0.05,repeats:true){ [weak self] _ in self?.pollPointer() }
         RunLoop.main.add(timer!,forMode:.common)
@@ -121,7 +121,7 @@ final class PetApp: NSObject, NSApplicationDelegate, WKNavigationDelegate {
     }
     func makeMenu()->NSMenu {
         let menu=NSMenu()
-        menu.addItem(menuItem("安安打字操作 2.1",nil))
+        menu.addItem(menuItem("AA TYPING 2.1",nil))
         menu.addItem(menuItem(tap == nil ? "键盘响应：等待输入监控授权":"键盘响应：已连接",nil))
         menu.addItem(.separator())
         menu.addItem(menuItem("演示打字",#selector(demo)))
@@ -141,7 +141,7 @@ final class PetApp: NSObject, NSApplicationDelegate, WKNavigationDelegate {
         menu.addItem(menuItem("移回右下角",#selector(resetPosition)))
         menu.addItem(menuItem("键盘响应权限…",#selector(permission)))
         menu.addItem(.separator())
-        menu.addItem(menuItem("退出安安打字操作",#selector(quit)))
+        menu.addItem(menuItem("退出AA TYPING",#selector(quit)))
         return menu
     }
     func refreshMenu(){item?.menu=makeMenu()}
